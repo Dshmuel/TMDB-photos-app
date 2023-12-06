@@ -1,0 +1,1 @@
+package com.dimovsoft.shutterfly.utilimport java.time.LocalDateimport java.time.format.DateTimeFormatterconst val SIMPLE_DATE_PATTERN = "yyyy-MM-dd"fun String.extractYear(): Int {	val formatter = DateTimeFormatter.ofPattern(SIMPLE_DATE_PATTERN)	val date = LocalDate.parse(this, formatter)	return date.year}
