@@ -66,6 +66,10 @@ class MainActivity : ComponentActivity() {
 					},
 					containerColor = Black,
 				) { innerPadding ->
+					if (pagerState.pageCount == 0) { // Nothing to show atm
+						return@Scaffold
+					}
+
 					HorizontalPager(
 						pagerState
 					) { pageIndex ->
