@@ -1,7 +1,7 @@
 package com.dimovsoft.shutterfly.model
 
-import com.google.gson.annotations.SerializedName
 import com.dimovsoft.shutterfly.util.extractYear
+import com.google.gson.annotations.SerializedName
 
 data class Movie(
 	@SerializedName("id") val id: Int?,

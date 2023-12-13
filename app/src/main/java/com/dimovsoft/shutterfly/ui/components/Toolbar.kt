@@ -1,7 +1,7 @@
 package com.dimovsoft.shutterfly.ui.components
 
 import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.filled.ArrowBack
+import androidx.compose.material.icons.automirrored.filled.ArrowBack
 import androidx.compose.material3.CenterAlignedTopAppBar
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Icon
@@ -30,7 +30,7 @@ fun Toolbar(modifier: Modifier = Modifier) {
 		},
 		navigationIcon = {
 			IconButton(onClick = {}) {
-				Icon(Icons.Filled.ArrowBack, "backIcon")
+				Icon(Icons.AutoMirrored.Filled.ArrowBack, "backIcon")
 			}
 		},
 		colors = TopAppBarDefaults.mediumTopAppBarColors(containerColor = Black),
