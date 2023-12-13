@@ -1,7 +1,7 @@
 package com.dimovsoft.shutterfly.data
 
 import android.content.Context
-import android.widget.Toast
+import android.util.Log
 import androidx.paging.Pager
 import androidx.paging.PagingConfig
 import androidx.paging.PagingData
@@ -27,7 +27,7 @@ class RepositoryImpl @Inject constructor(
 		return try {
 			apiService.getGenres().genres ?: emptyList()
 		} catch (exception: Exception) {
-			Toast.makeText(context, "Network error: ${exception.message}", Toast.LENGTH_LONG).show()
+			Log.e("RepositoryImpl", "Network error: ${exception.message}")
 			emptyList()
 		}
 	}
@@ -39,11 +39,11 @@ class RepositoryImpl @Inject constructor(
 		).flow
 
 	override suspend fun getConfiguration() {
-		return try {
+		try {
 			currentConfiguration = apiService.getConfiguration().images ?: return
 			currentConfiguration.bestDpi = bestImageSize(context, currentConfiguration.posterSizes!!)
 		} catch (exception: Exception) {
-			Toast.makeText(context, "Network error: ${exception.message}", Toast.LENGTH_LONG).show()
+			Log.e("RepositoryImpl", "Network error: ${exception.message}")
 		}
 	}
 
